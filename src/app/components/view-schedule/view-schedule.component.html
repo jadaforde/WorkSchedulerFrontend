@@ -1,0 +1,21 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col" *ngFor="let date of dateRange[0]">{{date | date: 'EEEE, MMMM d'}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr> <!--ngfor each shift in day, td for each day-->
+
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col" *ngFor="let date of dateRange[1]">{{date | date: 'EEEE, MMMM d'}}</th>
+            </tr>
+        </thead>
+    </table>
+</div>
