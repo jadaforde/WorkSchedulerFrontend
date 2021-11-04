@@ -15,4 +15,9 @@ export class LoginscreenComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  login(): void
+  {
+    console.log(this.username);
+    console.log(this.password);
+  }
 }
