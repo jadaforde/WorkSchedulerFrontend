@@ -1,1 +1,12 @@
-<p>loginscreen works!</p>
+<p>Log into Work Scheduling:</p>
+<div>
+    <label for="username-input">Username:</label>
+    <input type='text' id='username-input' placeholder='Username' [(ngModel)]='username' (keydown.enter)='login()'/>
+</div>
+<div>
+    <label for="password-input">Password:</label>
+    <input type='password' id='password-input' placeholder='Password' [(ngModel)]='password' (keydown.enter)='login()'/>
+</div>
+<div>
+    <button (click)='login()'>Log In</button>
+</div>
