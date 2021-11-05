@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from 'src/app/models/Employee';
 import { ScheduledShift } from 'src/app/models/ScheduledShift';
+import { shiftType } from 'src/app/models/ShiftType';
 
 @Component({
   selector: 'app-view-schedule',
@@ -16,8 +18,10 @@ export class ViewScheduleComponent implements OnInit {
     this.processShifts(this.fakeShifts);
   }
 
+  //TODO: implement a real request and get shifts as an array
+  //Any shifts in this fakeShifts array are displayed in the date set by the date property
   fakeShifts:Array<ScheduledShift> = [
-    {"id":1,"shiftType":{},"employee":{},"date":Date.now()}
+    {"scheduledShiftID":1,"shiftType":new shiftType(0,"Cashier",Date.now(),Date.now()+(8*3600000)),"employee":new Employee(0,"Donut Dude", "ddude123","hashme",0),"date":Date.now()}
   ];
 
   processedShifts:ScheduledShift[][][] = [];
