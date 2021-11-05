@@ -1,0 +1,47 @@
+<!-- Keven Mitchell - 11/5/21 -->
+<!-- this component displays the current week and the upcoming week, dates formatted with pipes -->
+<!-- any shifts within the processedShifts array can be displayed in the marked row, nested objects should work fine-->
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col" *ngFor="let date of dateRange[0]">{{date | date: 'EEEE, MMMM d'}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td *ngFor="let day of processedShifts[0]; let indexOfElement = index">
+                    <tr *ngFor="let shift of processedShifts[0][indexOfElement]">
+                        {{shift.employee.name}}<br>
+                        {{shift.shiftType.name}}<br>
+                        {{shift.shiftType.startTime | date:'hh:mm aa'}}
+                        -
+                        {{shift.shiftType.endTime | date:'hh:mm aa'}}
+                        <!-- use the shift object to display properties here for each cell -->
+                    </tr>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col" *ngFor="let date of dateRange[1]">{{date | date: 'EEEE, MMMM d'}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td *ngFor="let day of processedShifts[1]; let indexOfElement = index">
+                    <tr *ngFor="let shift of processedShifts[1][indexOfElement]">
+                        {{shift.employee.name}}<br>
+                        {{shift.shiftType.name}}<br>
+                        {{shift.shiftType.startTime | date:'hh:mm aa'}}
+                        -
+                        {{shift.shiftType.endTime | date:'hh:mm aa'}}
+                        <!-- use the shift object to display properties here for each cell -->
+                    </tr>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
