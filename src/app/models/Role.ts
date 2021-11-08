@@ -1,15 +1,11 @@
 export class Role
 {
     roleID:number;
-    canCreateShifts:boolean;
-    canAssignShifts:boolean;
-    canApproveTimeOff:boolean;
+    isManager:boolean;
 
-    constructor(roleID:number, canCreate:boolean, canAssign:boolean, canApprove:boolean)
+    constructor(roleID:number, isManager:boolean)
     {
         this.roleID=roleID;
-        this.canCreateShifts=canCreate;
-        this.canAssignShifts=canAssign;
-        this.canApproveTimeOff=canApprove;
+        this.isManager=isManager;
     }
 }
