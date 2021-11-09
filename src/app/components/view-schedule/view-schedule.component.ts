@@ -21,7 +21,9 @@ export class ViewScheduleComponent implements OnInit {
   //TODO: implement a real request and get shifts as an array
   //Any shifts in this fakeShifts array are displayed in the date set by the date property
   fakeShifts:Array<ScheduledShift> = [
-    {"scheduledShiftID":1,"shiftType":new shiftType(0,"Cashier",Date.now(),Date.now()+(8*3600000)),"employee":new Employee(0,"Donut Dude", "ddude123","hashme",0),"date":Date.now()}
+    {"scheduledShiftID":1,"shiftType":new shiftType(0,"Cashier",Date.now(),Date.now()+(8*3600000)),"employee":new Employee(0,"Donut Dude", "ddude123","hashme",0),"date":Date.now()},
+    {"scheduledShiftID":1,"shiftType":new shiftType(0,"Doughnut Maker",Date.now(),Date.now()+(8*3600000)),"employee":new Employee(0,"Donut Dude2", "ddude123","hashme",0),"date":Date.now()}
+
   ];
 
   processedShifts:ScheduledShift[][][] = [];
@@ -47,26 +49,27 @@ export class ViewScheduleComponent implements OnInit {
 
   processShifts(rawShifts:Array<ScheduledShift>)
   {
-    rawShifts.forEach((shift)=>{
-      for(let i = 0; i < this.dateRange.length; i++)
+    for(let i = 0; i < this.dateRange.length; i++)
+    {
+      let weekArr:ScheduledShift[][] = [];
+      
+      for(let j = 0; j<this.dateRange[i].length; j++)
       {
-        let weekArr:ScheduledShift[][] = [];
+        let dayArr:ScheduledShift[] = [];
 
-        for(let j = 0; j<this.dateRange[i].length; j++)
+        rawShifts.forEach(shift => 
         {
-          let dayArr:ScheduledShift[] = [];
-
           if(this.dateRange[i][j].getDate() == new Date(shift.date).getDate())
           {
             dayArr.push(shift);
           }
+        });
 
-          weekArr[j] = dayArr;
-        }
-
-        this.processedShifts[i] = weekArr;
+        weekArr[j] = dayArr;
       }
-    });
+
+      this.processedShifts[i] = weekArr;
+    }
   }
 
 }
