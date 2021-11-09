@@ -1,2 +1,4 @@
 <h1>Work Scheduling</h1>
-<app-view-schedule></app-view-schedule>
+<app-loginscreen *ngIf = "currentScreen=='app-loginscreen'"></app-loginscreen>
+<app-dash-board-screen *ngIf = "currentScreen=='app-dash-board-screen'"></app-dash-board-screen>
+<app-view-schedule *ngIf = "currentScreen=='app-view-schedule'"></app-view-schedule>
