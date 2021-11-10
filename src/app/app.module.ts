@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { LoginscreenComponent } from './components/loginscreen/loginscreen.component';
 import { DashBoardScreenComponent } from './components/dash-board-screen/dash-board-screen.component';
 import { ViewScheduleComponent } from './components/view-schedule/view-schedule.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginscreenComponent,
     DashBoardScreenComponent,
-    ViewScheduleComponent
+    ViewScheduleComponent,
+    LogoutComponent
   ],
   imports: [
     FormsModule,
