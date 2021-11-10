@@ -19,7 +19,7 @@
     <li class="nav-item">
       <a class="nav-link" routerLink="app-loginscreen" tabindex="-1" aria-disabled="true">Log Out</a>
     </li>
-   
+    <p *ngIf = 'app.isUserManager()'>
     <li class="nav-item">
       <a class="nav-link" routerLink="" tabindex="-1" aria-disabled="true">Approve Time Off</a>
     </li>

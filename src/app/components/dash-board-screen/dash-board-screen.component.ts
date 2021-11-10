@@ -8,7 +8,7 @@ import { AppComponent } from 'src/app/app.component';
 })
 export class DashBoardScreenComponent implements OnInit {
 
-  constructor(private app:AppComponent,) { }
+  constructor(public app:AppComponent) { }
 
   ngOnInit(): void {
   }
