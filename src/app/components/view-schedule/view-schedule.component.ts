@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 import { Employee } from 'src/app/models/Employee';
 import { ScheduledShift } from 'src/app/models/ScheduledShift';
 import { shiftType } from 'src/app/models/ShiftType';
@@ -10,7 +11,9 @@ import { shiftType } from 'src/app/models/ShiftType';
 })
 export class ViewScheduleComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private app:AppComponent
+  ) { }
 
   ngOnInit(): void {
     this.setDateRange(2);
@@ -70,6 +73,11 @@ export class ViewScheduleComponent implements OnInit {
 
       this.processedShifts[i] = weekArr;
     }
+  }
+
+  returnToDash()
+  {
+    this.app.currentScreen = 'app-dash-board-screen'
   }
 
 }
