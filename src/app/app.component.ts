@@ -1,4 +1,5 @@
 import { Component, ComponentRef } from '@angular/core';
+import { LoginResponse } from './models/LoginResponse';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,14 @@ export class AppComponent {
    * (see loginscreen.component.ts for an example, angular passes the AppComponent into the constructor)
    */
   currentScreen:string = "app-loginscreen";
-  
+  authToken:string = null;
+  user:LoginResponse = null;
+
+  public logout():void
+  {
+    this.authToken=null;
+    this.user=null;
+    this.currentScreen="app-loginscreen";
+  }
 
 }
