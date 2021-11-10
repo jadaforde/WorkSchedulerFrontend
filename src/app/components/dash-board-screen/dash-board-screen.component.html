@@ -5,44 +5,30 @@
 
 <ul class="nav">
     <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">View Schedule</a>
+      <a class="nav-link active" routerLink="app-view-schedule" aria-current="page" >View Schedule</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Set Avaiability</a>
+      <a class="nav-link" routerLink="">Set Avaiability</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Request time off</a>
+      <a class="nav-link" routerLink="">Request time off</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Request Paid Time Off</a>
+      <a class="nav-link" routerLink="" tabindex="-1" aria-disabled="true">Request Paid Time Off</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="app-loginscreen" tabindex="-1" aria-disabled="true">Log Out</a>
+    </li>
+    <p *ngif role.isManager = true>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="" tabindex="-1" aria-disabled="true">Approve Time Off</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="" tabindex="-1" aria-disabled="true">Create Schedule</a>
+    </li>
+    </p>
+
+
   </ul>
+   
 
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <a class="nav-link active" aria-current="page" href="#">View Schedule</a>
-    </div>
-</div>
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <a class="nav-link active" aria-current="page" href="#">View Schedule</a>
-    </div>
-</div>
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <a class="nav-link active" aria-current="page" href="#">View Schedule</a>
-    </div>
-</div>
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-        <a class="nav-link active" aria-current="page" href="#">View Schedule</a>
-    </div>
-</div>
-
-<nav class="nav nav-pills flex-column flex-sm-row">
-    <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#">Active</a>
-    <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page" href="#">Active</a>
-    <a class="flex-sm-fill text-sm-center nav-link" href="#">Longer nav link</a>
-    <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
-  
-  </nav>
