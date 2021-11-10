@@ -12,5 +12,8 @@ export class DashBoardScreenComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  viewSchedule(): void{
+    this.app.currentScreen = 'app-view-schedule';
+  }
 
 }
