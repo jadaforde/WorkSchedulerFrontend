@@ -25,4 +25,8 @@ export class AppComponent {
     this.currentScreen="app-loginscreen";
   }
 
+  public isUserManager():boolean
+  {
+    return this.user?.isManager;
+  }
 }

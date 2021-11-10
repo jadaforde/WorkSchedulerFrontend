@@ -53,6 +53,8 @@ export class LoginscreenComponent implements OnInit {
   {
     this.app.currentScreen='app-dash-board-screen';
     this.app.authToken = authToken;
+    console.log(typeof(response));
+    console.log(response);
     this.app.user = response;
   }
 

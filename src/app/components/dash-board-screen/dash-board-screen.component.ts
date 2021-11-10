@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-dash-board-screen',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashBoardScreenComponent implements OnInit {
 
-  constructor() { }
+  constructor(public app:AppComponent) { }
 
   ngOnInit(): void {
   }
