@@ -3,35 +3,22 @@
 
 <h1 id = "dash">DashBoard</h1>
 
-<ul class="nav">
-    <li class="nav-item">
-      <a class="nav-link active" routerLink="app-view-schedule" aria-current="page" >View Schedule</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="">Set Avaiability</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="">Request time off</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="" tabindex="-1" aria-disabled="true">Request Paid Time Off</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="app-loginscreen" tabindex="-1" aria-disabled="true">Log Out</a>
-    </li>
-    <p *ngIf = 'app.isUserManager()'>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="" tabindex="-1" aria-disabled="true">Approve Time Off</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="" tabindex="-1" aria-disabled="true">Create Schedule</a>
-    </li>
-    <button type="button" class="btn btn-primary" (click)="viewSchedule()" data-toggle="button" aria-pressed="false" autocomplete="off">
+    <div id = dashes>
+    <button style="margin: 10px;" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+     Set Avaiability 
+     </button>
+    <button type="button" style="margin: 10px;" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+     Request Time Off
+    </button>
+    <button type="button" style="margin: 10px;" class="btn btn-primary" (click)="viewSchedule()" data-toggle="button" aria-pressed="false" autocomplete="off">
       View Schedule
     </button>
+    <p *ngIf = 'app.isUserManager()'>
+      <button type="button" style="margin: 10px;" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+        Approve Time Off
+      </button>
+      <button type="button" style="margin: 10px;" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+       Create the Schedule
+      </button>
+    </div>
     
-
-
-  </ul>
-   
-
