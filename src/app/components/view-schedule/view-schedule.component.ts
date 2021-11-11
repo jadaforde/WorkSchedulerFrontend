@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { Employee } from 'src/app/models/Employee';
@@ -12,23 +13,39 @@ import { shiftType } from 'src/app/models/ShiftType';
 export class ViewScheduleComponent implements OnInit {
 
   constructor(
-    private app:AppComponent
+    private app:AppComponent,
+    private httpClient:HttpClient
   ) { }
 
   ngOnInit(): void {
     this.setDateRange(2);
     //temp, will have server call so needs to move eventually
-    this.processShifts(this.fakeShifts);
+    this.processShifts(this.getShifts());
   }
 
   //TODO: implement a real request and get shifts as an array
   //Any shifts in this fakeShifts array are displayed in the date set by the date property
+  getShifts():Array<ScheduledShift>
+  {
+    const headers:HttpHeaders = new HttpHeaders({
+      'Authorization': this.app.authToken
+    });
+    const pendingResponse = this.httpClient.get<ScheduledShift[]>("http://localhost:8080/schedule/", {headers:headers});
+    
+    pendingResponse.subscribe(
+      (response)=>{this.unProcessedShifts = response;}
+    );
+    
+    return this.unProcessedShifts;
+  }
+
   fakeShifts:Array<ScheduledShift> = [
     {"scheduledShiftID":1,"shiftType":new shiftType(0,"Cashier",Date.now(),Date.now()+(8*3600000)),"employee":new Employee(0,"Donut Dude", "ddude123","hashme",0),"date":Date.now()},
     {"scheduledShiftID":1,"shiftType":new shiftType(0,"Doughnut Maker",Date.now(),Date.now()+(8*3600000)),"employee":new Employee(0,"Donut Dude2", "ddude123","hashme",0),"date":Date.now()}
 
   ];
 
+  unProcessedShifts:Array<ScheduledShift>;
   processedShifts:ScheduledShift[][][] = [];
 
   dateRange:Date[][] = [];
