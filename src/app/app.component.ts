@@ -32,5 +32,5 @@ export class AppComponent {
   {
     return this.user?.isManager;
   }
->>>>>>> 20f045cd27a3563ff71496ff680e99cdc37dc500
+
 }
