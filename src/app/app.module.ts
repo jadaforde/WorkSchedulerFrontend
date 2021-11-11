@@ -10,6 +10,7 @@ import { DashBoardScreenComponent } from './components/dash-board-screen/dash-bo
 import { ViewScheduleComponent } from './components/view-schedule/view-schedule.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { TimeOffComponent } from './components/time-off/time-off.component';
+import { ApprovedPipePipe } from './pipes/approved-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TimeOffComponent } from './components/time-off/time-off.component';
     DashBoardScreenComponent,
     ViewScheduleComponent,
     LogoutComponent,
-    TimeOffComponent
+    TimeOffComponent,
+    ApprovedPipePipe
   ],
   imports: [
     FormsModule,
