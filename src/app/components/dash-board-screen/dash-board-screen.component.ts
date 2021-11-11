@@ -15,5 +15,8 @@ export class DashBoardScreenComponent implements OnInit {
   viewSchedule(): void{
     this.app.currentScreen = 'app-view-schedule';
   }
+  viewAvaiability(): void{
+    this.app.currentScreen = 'app-set-availability';
+  }
 
 }
