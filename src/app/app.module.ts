@@ -9,6 +9,7 @@ import { LoginscreenComponent } from './components/loginscreen/loginscreen.compo
 import { DashBoardScreenComponent } from './components/dash-board-screen/dash-board-screen.component';
 import { ViewScheduleComponent } from './components/view-schedule/view-schedule.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { SetAvailabilityComponent } from './components/set-availability/set-availability.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LogoutComponent } from './components/logout/logout.component';
     LoginscreenComponent,
     DashBoardScreenComponent,
     ViewScheduleComponent,
-    LogoutComponent
+    LogoutComponent,
+    SetAvailabilityComponent
   ],
   imports: [
     FormsModule,
