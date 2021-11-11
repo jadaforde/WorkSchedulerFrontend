@@ -9,6 +9,7 @@ import { LoginscreenComponent } from './components/loginscreen/loginscreen.compo
 import { DashBoardScreenComponent } from './components/dash-board-screen/dash-board-screen.component';
 import { ViewScheduleComponent } from './components/view-schedule/view-schedule.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { SetAvailabilityComponent } from './components/set-availability/set-availability.component';
 import { TimeOffComponent } from './components/time-off/time-off.component';
 import { ApprovedPipePipe } from './pipes/approved-pipe.pipe';
 
@@ -19,6 +20,7 @@ import { ApprovedPipePipe } from './pipes/approved-pipe.pipe';
     DashBoardScreenComponent,
     ViewScheduleComponent,
     LogoutComponent,
+    SetAvailabilityComponent,
     TimeOffComponent,
     ApprovedPipePipe
   ],
