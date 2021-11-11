@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ComponentRef } from '@angular/core';
+import { LoginResponse } from './models/LoginResponse';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,25 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'WorkSchedulerFrontend';
+
+  /**
+   * Which screen is to be displayed (name of the component)
+   * You can use this with *ngIf in the app-component html to only show one main screen component
+   * (see loginscreen.component.ts for an example, angular passes the AppComponent into the constructor)
+   */
+  currentScreen:string = "app-loginscreen";
+  authToken:string = null;
+  user:LoginResponse = null;
+
+  public logout():void
+  {
+    this.authToken=null;
+    this.user=null;
+    this.currentScreen="app-loginscreen";
+  }
+
+  public isUserManager():boolean
+  {
+    return this.user?.isManager;
+  }
 }
