@@ -1,0 +1,36 @@
+<h3 style="cursor: pointer;" (click)="returnToDash()">Return To Dashboard</h3>
+<br>
+<h3>Your Requests</h3>
+<div style="max-width: 80vw;">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th>Start of Request</th>
+                <th>End of Request</th>
+                <th>Approved</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of myRequests">
+                <td scope="row">{{row.timeOffRequestID}}</td>
+                <td>{{row.startTime | date}}</td>
+                <td>{{row.endTime | date}}</td>
+                <td>{{row.approved | approvedPipe}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br>
+<h3>New Request</h3>
+<div class="col-6" style="border: 1px inset gray;">
+    <label for="startTimeinp" class="col-4">Unavailable from: </label>
+    <input type="datetime-local" name="startTimeinp" class="col-8"[(ngModel)]=startTime>
+    <br>
+    <label for="endTimeinp" class="col-4">Unavailable to: </label>
+    <input type="datetime-local" name="endTimeinp" class="col-8"[(ngModel)]=endTime>
+    <br>
+    <p class="text-danger fw-bold" *ngIf="!timesValid">Both Start Date/time and End Date/time must be filled out</p>
+    <button (click)="submitRequest()" style="margin:auto" class="col-12 btn btn-outline-primary">Submit Request</button>
+</div>
+<br>

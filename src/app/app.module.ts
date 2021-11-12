@@ -10,6 +10,10 @@ import { DashBoardScreenComponent } from './components/dash-board-screen/dash-bo
 import { ViewScheduleComponent } from './components/view-schedule/view-schedule.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { SetAvailabilityComponent } from './components/set-availability/set-availability.component';
+import { TimeOffComponent } from './components/time-off/time-off.component';
+import { ApprovedPipePipe } from './pipes/approved-pipe.pipe';
+import { ApTimeOffComponent } from './components/ap-time-off/ap-time-off.component';
+import { CreateScheduleComponent } from './components/create-schedule/create-schedule.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { SetAvailabilityComponent } from './components/set-availability/set-avai
     DashBoardScreenComponent,
     ViewScheduleComponent,
     LogoutComponent,
-    SetAvailabilityComponent
+    SetAvailabilityComponent,
+    TimeOffComponent,
+    ApprovedPipePipe,
+    ApTimeOffComponent,
+    CreateScheduleComponent
   ],
   imports: [
     FormsModule,

@@ -7,7 +7,10 @@ import { LoginResponse } from './models/LoginResponse';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'WorkSchedulerFrontend';
+//   title = 'WorkSchedulerFrontend';
+// <<<<<<< HEAD
+//   myimage:string = "assets/LOGO1.png";
+// =======
 
   /**
    * Which screen is to be displayed (name of the component)
@@ -29,4 +32,5 @@ export class AppComponent {
   {
     return this.user?.isManager;
   }
+
 }

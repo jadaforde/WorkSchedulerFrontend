@@ -4,20 +4,20 @@
 <h1 id = "dash">DashBoard</h1>
 
     <div id = dashes>
-    <button style="margin: 10px;" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-     Set Avaiability 
+    <button style="margin: 10px;" type="button" class="btn btn-primary" (click)="viewAvaiability()" data-toggle="button" aria-pressed="false" autocomplete="off">
+     Set Availability 
      </button>
-    <button type="button" style="margin: 10px;" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+    <button type="button" style="margin: 10px;" class="btn btn-primary" (click)="viewTimeOff()" data-toggle="button" aria-pressed="false" autocomplete="off">
      Request Time Off
     </button>
     <button type="button" style="margin: 10px;" class="btn btn-primary" (click)="viewSchedule()" data-toggle="button" aria-pressed="false" autocomplete="off">
       View Schedule
     </button>
     <p *ngIf = 'app.isUserManager()'>
-      <button type="button" style="margin: 10px;" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+      <button type="button" style="margin: 10px;" class="btn btn-primary" (click)="approveTimeOff()" data-toggle="button" aria-pressed="false" autocomplete="off">
         Approve Time Off
       </button>
-      <button type="button" style="margin: 10px;" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+      <button type="button" style="margin: 10px;" class="btn btn-primary" (click)="createSchedule()" data-toggle="button" aria-pressed="false" autocomplete="off">
        Create the Schedule
       </button>
     </div>
