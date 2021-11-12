@@ -29,11 +29,9 @@ export class ViewScheduleComponent implements OnInit {
     });
     const pendingResponse = this.httpClient.get<ScheduledShift[]>("http://localhost:8080/schedule/", {headers:headers});
     
-    pendingResponse.subscribe(
-      (response)=>{this.unProcessedShifts = response;}
-    );
-    
-    return this.unProcessedShifts;
+    const response = await pendingResponse.toPromise();
+    this.unProcessedShifts = response;
+    return response;
   }
 
   unProcessedShifts:Array<ScheduledShift>;
