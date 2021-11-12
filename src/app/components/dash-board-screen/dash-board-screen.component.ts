@@ -25,6 +25,10 @@ export class DashBoardScreenComponent implements OnInit {
   approveTimeOff(): void{
     this.app.currentScreen = 'app-ap-time-off';
   }
+  createSchedule()
+  {
+    this.app.currentScreen = 'app-create-schedule';
+  }
 
 
 }

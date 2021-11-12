@@ -1,0 +1,72 @@
+
+<div style="max-width: 80vw; margin: auto;">
+    <h3 style="cursor: pointer;" (click)="returnToDash()">Return To Dashboard</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" *ngFor="let date of dateRange[0]">{{date | date: 'EEEE, MMMM d'}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td *ngFor="let day of dateRange[0]; let indexOfElement = index" style="border: 1px solid black; padding: 0;">
+                    <div>
+                        Add Shift: <br>
+                        <select name="empSelect{{indexOfElement}}" id="empSelect{{indexOfElement}}" [(ngModel)]="selectedEmp[0][indexOfElement]">
+                            <option [value]="emp.employeeID" *ngFor="let emp of avEmployees">{{emp.name}}</option>
+                        </select><br>
+                        <select name="shiftSelect{{indexOfElement}}" id="shiftSelect{{indexOfElement}}" (change)="getAvEmps(selectedShift[0][indexOfElement])" [(ngModel)]="selectedShift[0][indexOfElement]">
+                            <option [value]="type.shiftTypeID" *ngFor="let type of avShiftTypes">{{type.name}}</option>
+                        </select><br>
+                        <button (click)="addShift(dateRange[0][indexOfElement], indexOfElement, 0)">Add Shift</button>
+                    </div>
+
+                    <div *ngIf="processedShifts[0]!=null">
+                        <div *ngFor="let shift of processedShifts[0][indexOfElement]" style="border-top: 1px solid black; border-bottom: 1px solid black; padding: 5px;">
+                        {{shift.employee.name}}<br>
+                        {{shift.shiftType.name}}<br>
+                        {{shift.shiftType.startTime | date:'hh:mm aa'}}
+                        -
+                        {{shift.shiftType.endTime | date:'hh:mm aa'}}<br>
+                        <!-- use the shift object to display properties here for each cell -->
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" *ngFor="let date of dateRange[1]">{{date | date: 'EEEE, MMMM d'}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td *ngFor="let day of dateRange[1]; let indexOfElement = index" style="border: 1px solid black; padding: 0;">
+                    <div>
+                        Add Shift: <br>
+                        <select name="empSelect{{indexOfElement}}" id="empSelect{{indexOfElement}}" [(ngModel)]="selectedEmp[1][indexOfElement]" (change)="getAvShifts()">
+                            <option [value]="emp.employeeID" *ngFor="let emp of avEmployees">{{emp.name}}</option>
+                        </select><br>
+                        <select name="shiftSelect{{indexOfElement}}" id="shiftSelect{{indexOfElement}}" (change)="getAvEmps(selectedShift[1][indexOfElement])" [(ngModel)]="selectedShift[1][indexOfElement]">
+                            <option [value]="shift.shiftTypeID" *ngFor="let shift of avShiftTypes">{{shift.name}}</option>
+                        </select><br>
+                        <button (click)="addShift(dateRange[1][indexOfElement], indexOfElement, 1)">Add Shift</button>
+                    </div>
+
+                    <div  *ngIf="processedShifts[1] != null">
+                        <div *ngFor="let shift of processedShifts[1][indexOfElement]" style="border-top: 1px solid black; border-bottom: 1px solid black; padding: 5px;">
+                        {{shift.employee.name}}<br>
+                        {{shift.shiftType.name}}<br>
+                        {{shift.shiftType.startTime | date:'hh:mm aa'}}
+                        -
+                        {{shift.shiftType.endTime | date:'hh:mm aa'}}<br>
+                        <!-- use the shift object to display properties here for each cell -->
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
