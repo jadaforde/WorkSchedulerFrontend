@@ -1,15 +1,31 @@
-<p>Log into Work Scheduling:</p>
-<div>
-    <label for="username-input">Username:</label>
-    <input type='text' placeholder='Username' [(ngModel)]='username' name='username' (keydown.enter)='login()' #usernameInput autofocus/>
-</div>
-<div>
-    <label for="password-input">Password:</label>
-    <input type='password' placeholder='Password' [(ngModel)]='password' name='password' (keydown.enter)='login()'/>
-</div>
-<div>
-    <button (click)='login()'>Log In</button>
-</div>
-<div class='invalid-login-prompt' *ngIf='showInvalidLoginPrompt'>
-    <p>Could not log in; invalid username and/or password.</p>
+<div class="grid-container" id = "login">
+    
+    <div class="grid-item"></div>
+    <div class="grid-item"><p><br>Donut Work Scheduler Login:</p></div>
+    <div class="grid-item"><img src = "../../../assets/sprinklesDonut.png" class="sprinkles-donut"></div>  
+
+    <div class="grid-item"></div>
+    <div  class= "loginbackground">
+        <div>
+            <br>
+            <label for="username-input">Username:    </label>
+            <input class="logintextbox" type='text' placeholder='Username' [(ngModel)]='username' name='username' (keydown.enter)='login()' #usernameInput autofocus/>
+        </div>
+        <div>
+            <label for="password-input">Password:     </label>
+            <input class="logintextbox" type='password' placeholder='Password' [(ngModel)]='password' name='password' (keydown.enter)='login()'/>
+        </div>
+        <br>
+    </div>
+    <div class="grid-item"></div>
+
+    <div class="grid-item"><img src = "../../../assets/twoDonut.png.png" class="two-donut"></div>  
+    <div class="grid-item">
+        <div><button (click)='login()'>Log In</button></div>
+        <div class='invalid-login-prompt' *ngIf='showInvalidLoginPrompt'>
+            <p>Could not log in; invalid username and/or password.</p>
+        </div>
+    </div>
+    <div class="grid-item"></div>  
+    
 </div>
