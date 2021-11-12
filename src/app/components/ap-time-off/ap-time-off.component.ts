@@ -45,7 +45,7 @@ export class ApTimeOffComponent implements OnInit {
       'Authorization': this.app.authToken
     });
     console.log(this.app.authToken);
-    const pendingResponse = this.httpClient.get<TimeOffRequest>("http://localhost:8080/timeoff/approve/"+id+"?approved=true", {headers:headers});
+    const pendingResponse = this.httpClient.patch<TimeOffRequest>("http://localhost:8080/timeoff/"+id+"?approved=true",{}, {headers:headers});
     
     pendingResponse.subscribe(
       (response)=>{this.getPendingRequests(); console.log(response)}
@@ -58,7 +58,7 @@ export class ApTimeOffComponent implements OnInit {
       'Authorization': this.app.authToken
     });
     console.log(this.app.authToken);
-    const pendingResponse = this.httpClient.get<TimeOffRequest>("http://localhost:8080/timeoff/approve/"+id+"?approved=false", {headers:headers});
+    const pendingResponse = this.httpClient.patch<TimeOffRequest>("http://localhost:8080/timeoff/"+id+"?approved=false",{}, {headers:headers});
     
     pendingResponse.subscribe(
       (response)=>{this.getPendingRequests(); console.log(response)}

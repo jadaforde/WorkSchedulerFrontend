@@ -3,7 +3,7 @@ import { shiftType } from "./ShiftType";
 
 export class ScheduledShift
 {
-    scheduledShiftID:number = 0;
+    scheduledShiftID:number;
     shiftType:shiftType;
     employee:Employee;
     date:number;

@@ -13,6 +13,7 @@ import { SetAvailabilityComponent } from './components/set-availability/set-avai
 import { TimeOffComponent } from './components/time-off/time-off.component';
 import { ApprovedPipePipe } from './pipes/approved-pipe.pipe';
 import { ApTimeOffComponent } from './components/ap-time-off/ap-time-off.component';
+import { CreateScheduleComponent } from './components/create-schedule/create-schedule.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ApTimeOffComponent } from './components/ap-time-off/ap-time-off.compone
     SetAvailabilityComponent,
     TimeOffComponent,
     ApprovedPipePipe,
-    ApTimeOffComponent
+    ApTimeOffComponent,
+    CreateScheduleComponent
   ],
   imports: [
     FormsModule,
