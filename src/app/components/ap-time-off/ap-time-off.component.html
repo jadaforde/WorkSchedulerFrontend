@@ -1,0 +1,27 @@
+
+
+<h3 *ngIf="manager">Pending Requests</h3>
+<div style="max-width: 80vw;" *ngIf="manager">
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th>Employee Name</th>
+                <th>Start of Request</th>
+                <th>End of Request</th>
+                <th>Approved</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of pendingRequests">
+                <td scope="row">{{row.timeOffRequestID}}</td>
+                <td>{{row.employee.name}}</td>
+                <td>{{row.startTime | date}}</td>
+                <td>{{row.endTime | date}}</td>
+                <td>{{row.approved | approvedPipe}}</td>
+                <td><button class="btn btn-primary m-1" (click)='approve(row.timeOffRequestID)'>Approve</button><Button class="btn btn-secondary m-1" (click)='deny(row.timeOffRequestID)'>Deny</Button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -18,12 +18,10 @@ export class TimeOffComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.app.user.employee.employeeID);
     this.getMyRequests();
-    this.getPendingRequests();
   }
 
   manager:boolean = this.app.isUserManager();
   myRequests:TimeOffRequest[];
-  pendingRequests:TimeOffRequest[];
 
   startTime:string;
   endTime:string;
@@ -38,18 +36,6 @@ export class TimeOffComponent implements OnInit {
     
     pendingResponse.subscribe(
       (response)=>{this.myRequests = response;}
-    );
-  }
-
-  getPendingRequests()
-  {
-    const headers:HttpHeaders = new HttpHeaders({
-      'Authorization': this.app.authToken
-    });
-    const pendingResponse = this.httpClient.get<TimeOffRequest[]>("http://localhost:8080/timeoff", {headers:headers});
-    
-    pendingResponse.subscribe(
-      (response)=>{this.pendingRequests = response;}
     );
   }
 
