@@ -22,5 +22,9 @@ export class DashBoardScreenComponent implements OnInit {
   viewTimeOff(): void{
     this.app.currentScreen = 'app-time-off';
   }
+  approveTimeOff(): void{
+    this.app.currentScreen = 'app-ap-time-off';
+  }
+
 
 }

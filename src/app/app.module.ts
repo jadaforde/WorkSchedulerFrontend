@@ -12,6 +12,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { SetAvailabilityComponent } from './components/set-availability/set-availability.component';
 import { TimeOffComponent } from './components/time-off/time-off.component';
 import { ApprovedPipePipe } from './pipes/approved-pipe.pipe';
+import { ApTimeOffComponent } from './components/ap-time-off/ap-time-off.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ApprovedPipePipe } from './pipes/approved-pipe.pipe';
     LogoutComponent,
     SetAvailabilityComponent,
     TimeOffComponent,
-    ApprovedPipePipe
+    ApprovedPipePipe,
+    ApTimeOffComponent
   ],
   imports: [
     FormsModule,

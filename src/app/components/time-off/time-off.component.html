@@ -34,26 +34,3 @@
     <button (click)="submitRequest()" style="margin:auto" class="col-12 btn btn-outline-primary">Submit Request</button>
 </div>
 <br>
-<h3 *ngIf="manager">Pending Requests</h3>
-<div style="max-width: 80vw;" *ngIf="manager">
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th>Employee Name</th>
-                <th>Start of Request</th>
-                <th>End of Request</th>
-                <th>Approved</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let row of pendingRequests">
-                <td scope="row">{{row.timeOffRequestID}}</td>
-                <td>{{row.employee.name}}</td>
-                <td>{{row.startTime | date}}</td>
-                <td>{{row.endTime | date}}</td>
-                <td>{{row.approved | approvedPipe}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
