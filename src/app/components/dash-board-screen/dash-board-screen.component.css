@@ -1,3 +1,25 @@
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css";
+@import "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js";
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js";
+
 #dash{
 text-align: center;
+display: grid;
+grid-gap: 50px;
+grid-template-columns: auto auto auto;
+background-color: #F1ACE8;
+padding: 10px;
+
+}
+
+.container {
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: auto auto auto;
+    background-color: #F1ACE8;
+    padding: 10px;
+}
+
+#sidebarMenu{
+    background-color: #F1ACE8;
 }
