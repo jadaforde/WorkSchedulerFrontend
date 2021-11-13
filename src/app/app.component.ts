@@ -33,4 +33,30 @@ export class AppComponent {
     return this.user?.isManager;
   }
 
+
+  viewDashboard(): void{
+    this.currentScreen = 'app-dash-board-screen';
+  }
+  viewSchedule(): void{
+    this.currentScreen = 'app-view-schedule';
+  }
+
+  viewAvaiability(): void{
+    this.currentScreen = 'app-set-availability';
+  }
+  viewTimeOff(): void{
+    this.currentScreen = 'app-time-off';
+  }
+  approveTimeOff(): void{
+    this.currentScreen = 'app-ap-time-off';
+  }
+  createSchedule()
+  {
+    this.currentScreen = 'app-create-schedule';
+  }
+
+  // logout():void
+  // {
+  //   this.logout();
+  // }
 }
