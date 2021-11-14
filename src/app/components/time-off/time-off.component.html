@@ -32,5 +32,6 @@
     <br>
     <p class="text-danger fw-bold" *ngIf="!timesValid">Both Start Date/time and End Date/time must be filled out</p>
     <button (click)="submitRequest()" style="margin:auto" class="col-12 btn btn-outline-primary">Submit Request</button>
+    <p *ngIf='InvalidTimeOffEntered()' style="color:red" >Time-off start dates must come before time-off end dates.</p>
 </div>
 <br>
