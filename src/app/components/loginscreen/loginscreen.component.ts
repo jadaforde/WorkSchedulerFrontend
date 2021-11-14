@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-loginscreen',
   templateUrl: './loginscreen.component.html',
-  styleUrls: ['./loginscreen.component.css']
+  styleUrls: ['./loginscreen.component.css'],
 })
 export class LoginscreenComponent implements OnInit {
 

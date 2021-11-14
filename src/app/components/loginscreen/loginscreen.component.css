@@ -1,0 +1,36 @@
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css";
+@import "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js";
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js";
+
+.grid-container {
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: auto auto auto;
+    background-color: #F1ACE8;
+    padding: 10px;
+}
+.grid-item {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+.loginbackground{
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    background-color:#F8B170; 
+    box-shadow: 0px 0px 10px #fff;
+    border-radius: 10px;
+}
+.logintextbox {
+    border-radius:60px;
+    padding-left: 18px;
+    margin-left:17px;
+}
+.sprinkles-donut {
+    width:300px;
+}
+
+.two-donut{
+    width:400px;   
+}
