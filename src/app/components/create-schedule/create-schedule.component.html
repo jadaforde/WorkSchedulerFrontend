@@ -25,9 +25,9 @@
                         <div *ngFor="let shift of processedShifts[0][indexOfElement]" style="border-top: 1px solid black; border-bottom: 1px solid black; padding: 5px;">
                         {{shift.employee.name}}<br>
                         {{shift.shiftType.name}}<br>
-                        {{shift.shiftType.startTime | date:'hh:mm aa'}}
+                        {{shift.shiftType.startTime | date:'hh:mm aa':'UTC'}}
                         -
-                        {{shift.shiftType.endTime | date:'hh:mm aa'}}<br>
+                        {{shift.shiftType.endTime | date:'hh:mm aa':'UTC'}}<br>
                         <!-- use the shift object to display properties here for each cell -->
                         </div>
                     </div>
@@ -59,9 +59,9 @@
                         <div *ngFor="let shift of processedShifts[1][indexOfElement]" style="border-top: 1px solid black; border-bottom: 1px solid black; padding: 5px;">
                         {{shift.employee.name}}<br>
                         {{shift.shiftType.name}}<br>
-                        {{shift.shiftType.startTime | date:'hh:mm aa'}}
+                        {{shift.shiftType.startTime | date:'hh:mm aa':'UTC'}}
                         -
-                        {{shift.shiftType.endTime | date:'hh:mm aa'}}<br>
+                        {{shift.shiftType.endTime | date:'hh:mm aa':'UTC'}}<br>
                         <!-- use the shift object to display properties here for each cell -->
                         </div>
                     </div>
