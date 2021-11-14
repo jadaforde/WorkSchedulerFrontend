@@ -68,4 +68,9 @@ export class TimeOffComponent implements OnInit {
   {
     this.timesValid = (this.startTime != null && this.endTime != null)?true:false;
   }
+
+  InvalidTimeOffEntered(){
+    if (this.startTime > this.endTime) {return true;}
+    else return false;
+  }
 }
